@@ -11,8 +11,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+    res.send('API is running');
+});
 // Routes
-app.use('/', schoolRoutes);
+app.use('/school', schoolRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
